@@ -5,6 +5,7 @@ import { IAppStrings } from "../strings";
  */
 export const spanish: IAppStrings = {
     appName: "Herramienta Visual de Etiquetado de Objetos",
+    app:'VoTT',
     common: {
         displayName: "Nombre para Mostrar",
         description: "Descripción",
@@ -21,6 +22,7 @@ export const spanish: IAppStrings = {
         maximize: "Maximizar",
         restore: "Restaurar",
         close: "Cerrar",
+        welcome:"wellcome",
     },
     homePage: {
         newProject: "Nuevo Proyecto",

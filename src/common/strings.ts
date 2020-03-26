@@ -1,6 +1,7 @@
 import LocalizedStrings, { LocalizedStringsMethods } from "react-localization";
 import { english } from "./localization/en-us";
 import { spanish } from "./localization/es-cl";
+import { chinese } from './localization/zh-cn';
 
 /**
  * Interface for all required strings in application
@@ -8,6 +9,7 @@ import { spanish } from "./localization/es-cl";
  */
 export interface IAppStrings {
     appName: string;
+    app: string;
     common: {
         displayName: string;
         description: string;
@@ -24,6 +26,7 @@ export interface IAppStrings {
         maximize: string;
         restore: string;
         close: string;
+        welcome: string;
     };
     homePage: {
         newProject: string;
@@ -454,6 +457,7 @@ interface IStrings extends LocalizedStringsMethods, IAppStrings { }
 export const strings: IStrings = new LocalizedStrings({
     en: english,
     es: spanish,
+    zh: chinese
 });
 
 /**

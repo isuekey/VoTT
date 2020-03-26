@@ -3,39 +3,39 @@ import { IAppStrings } from "../strings";
 /**
  * App Strings for English language
  */
-export const english: IAppStrings = {
-    appName: "Visual Object Tagging Tool",
+export const chinese: IAppStrings = {
+    appName: "虚拟物标记工具",
     app:'VoTT',
     common: {
-        displayName: "Display Name",
-        description: "Description",
-        submit: "Submit",
-        cancel: "Cancel",
-        save: "Save",
-        delete: "Delete",
-        provider: "Provider",
-        homePage: "Home Page",
+        displayName: "文饰",
+        description: "描述",
+        submit: "确定",
+        cancel: "取消",
+        save: "保存",
+        delete: "删除",
+        provider: "源",
+        homePage: "首页",
     },
     titleBar: {
-        help: "Help",
-        minimize: "Minimize",
-        maximize: "Maximize",
-        restore: "Restore",
-        close: "Close",
-        welcome: "welcome",
+        help: "帮助",
+        minimize: "最小值",
+        maximize: "最大值",
+        restore: "恢复",
+        close: "关闭",
+        welcome:"欢迎",
     },
     homePage: {
-        newProject: "New Project",
+        newProject: "新建项目",
         openLocalProject: {
-            title: "Open Local Project",
+            title: "打开本地项目",
         },
         openCloudProject: {
-            title: "Open Cloud Project",
-            selectConnection: "Select a Connection",
+            title: "打开云端项目",
+            selectConnection: "选择一个连接",
         },
-        recentProjects: "Recent Projects",
+        recentProjects: "近期的项目",
         deleteProject: {
-            title: "Delete Project",
+            title: "删除项目",
             confirmation: "Are you sure you want to delete project",
         },
         importProject: {
