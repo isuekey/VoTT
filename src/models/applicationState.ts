@@ -401,6 +401,10 @@ export interface ISecurityToken {
     key: string;
 }
 
+export interface IVottInput {
+    name: string;
+}
+
 export interface ITFRecordMetadata {
     width: number;
     height: number;

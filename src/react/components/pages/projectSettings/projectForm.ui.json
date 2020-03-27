@@ -1,4 +1,7 @@
 {
+    "name": {
+        "ui:field": "name"
+    },
     "securityToken": {
         "ui:field": "securityToken"
     },

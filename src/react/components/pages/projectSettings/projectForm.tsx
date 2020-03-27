@@ -8,6 +8,7 @@ import { ConnectionPickerWithRouter } from "../../common/connectionPicker/connec
 import { CustomField } from "../../common/customField/customField";
 import CustomFieldTemplate from "../../common/customField/customFieldTemplate";
 import { ISecurityTokenPickerProps, SecurityTokenPicker } from "../../common/securityTokenPicker/securityTokenPicker";
+import { IVottInputFieldProps, VottInputField } from '../../common/vottInputField/vottInputField'
 import "vott-react/dist/css/tagsInput.css";
 import { IConnectionProviderPickerProps } from "../../common/connectionProviderPicker/connectionProviderPicker";
 import LocalFolderPicker from "../../common/localFolderPicker/localFolderPicker";
@@ -127,6 +128,12 @@ export default class ProjectForm extends React.Component<IProjectFormProps, IPro
 
     private fields() {
         return {
+            name: CustomField<IVottInputFieldProps>(VottInputField, (props) => ({
+                id: props.idSchema.$id,
+                schema: props.schema,
+                value: props.formData,
+                onChange: props.onChange
+            })),
             securityToken: CustomField<ISecurityTokenPickerProps>(SecurityTokenPicker, (props) => ({
                 id: props.idSchema.$id,
                 schema: props.schema,
@@ -175,12 +182,16 @@ export default class ProjectForm extends React.Component<IProjectFormProps, IPro
     }
 
     private onFormValidate(project: IProject, errors: FormValidation) {
+        console.log('listen project project', errors);
+        if (!project.name) {
+            errors.name.addError(strings.lost.needRequire);
+        }
         if (Object.keys(project.sourceConnection).length === 0) {
-            errors.sourceConnection.addError("is a required property");
+            errors.sourceConnection.addError(strings.lost.needRequire);
         }
 
         if (Object.keys(project.targetConnection).length === 0) {
-            errors.targetConnection.addError("is a required property");
+            errors.targetConnection.addError(strings.lost.needRequire);
         }
 
         if (this.state.classNames.indexOf("was-validated") === -1) {

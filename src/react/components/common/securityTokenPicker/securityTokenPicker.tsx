@@ -1,6 +1,7 @@
 import React, { SyntheticEvent } from "react";
 import { ISecurityToken } from "../../../../models/applicationState";
 
+import { strings } from '../../../../common/strings';
 /**
  * Security Token Picker Properties
  * @member id - The id to bind to the input element
@@ -32,7 +33,7 @@ export class SecurityTokenPicker extends React.Component<ISecurityTokenPickerPro
                 className="form-control"
                 value={this.props.value}
                 onChange={this.onChange}>
-                <option value="">Generate New Security Token</option>
+                <option value="">{strings.projectSettings.securityToken.placeHolder || 'Generate New Security Token'}</option>
                 {this.props.securityTokens.map((item) => <option key={item.key} value={item.name}>{item.name}</option>)}
             </select>
         );

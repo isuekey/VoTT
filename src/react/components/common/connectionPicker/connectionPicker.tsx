@@ -1,6 +1,7 @@
 import React from "react";
 import { IConnection } from "../../../../models/applicationState";
 import { RouteComponentProps, withRouter } from "react-router-dom";
+import { strings } from '../../../../common/strings';
 
 /**
  * Properties for Connection Picker
@@ -53,7 +54,7 @@ export class ConnectionPicker extends React.Component<IConnectionPickerProps, IC
         return (
             <div className="input-group">
                 <select id={id} value={selectedValue} onChange={this.onChange} className="form-control">
-                    <option>Select Connection</option>
+                    <option>{strings.projectSettings.selectConnection || 'Select Connection'}</option>
                     {connections.map((connection) =>
                         <option
                             className="connection-option"
@@ -65,7 +66,7 @@ export class ConnectionPicker extends React.Component<IConnectionPickerProps, IC
                 <div className="input-group-append">
                     <button className="btn btn-primary add-connection"
                         type="button"
-                        onClick={this.createConnection}>Add Connection</button>
+                        onClick={this.createConnection}>{strings.projectSettings.addConnection || 'Select Connection'}</button>
                 </div>
             </div>
         );

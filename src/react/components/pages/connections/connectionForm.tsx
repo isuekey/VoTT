@@ -136,7 +136,7 @@ export default class ConnectionForm extends React.Component<IConnectionFormProps
 
     private onFormValidate(connection: IConnection, errors: FormValidation) {
         if (connection.providerType === "") {
-            errors.providerType.addError("is a required property");
+            errors.providerType.addError(strings.lost.needRequire);
         }
 
         if (this.state.classNames.indexOf("was-validated") === -1) {

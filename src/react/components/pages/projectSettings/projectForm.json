@@ -8,7 +8,7 @@
         },
         "securityToken": {
             "title": "${strings.projectSettings.securityToken.title}",
-            "description": "${strings.projectSettings.securityToken.description}",
+            "description": "${strings.projectSettings.securityToken.description}",            
             "type": "string"
         },
         "sourceConnection": {
