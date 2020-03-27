@@ -67,7 +67,8 @@ export default class ProjectForm extends React.Component<IProjectFormProps, IPro
             uiSchema: { ...uiSchema },
             formSchema: { ...formSchema },
             formData: {
-                ...this.props.project,
+              ...this.props.project,
+              name:this.props.project && this.props.project.name || '',
             },
         };
         this.tagsInput = React.createRef<TagsInput>();
@@ -86,7 +87,10 @@ export default class ProjectForm extends React.Component<IProjectFormProps, IPro
     public componentDidUpdate(prevProps: IProjectFormProps) {
         if (prevProps.project !== this.props.project) {
             this.setState({
-                formData: { ...this.props.project },
+              formData: {
+                ...this.props.project,
+                name:this.props.project && this.props.project.name || '',
+              },
             });
         }
     }
@@ -182,7 +186,6 @@ export default class ProjectForm extends React.Component<IProjectFormProps, IPro
     }
 
     private onFormValidate(project: IProject, errors: FormValidation) {
-        console.log('listen project project', errors);
         if (!project.name) {
             errors.name.addError(strings.lost.needRequire);
         }

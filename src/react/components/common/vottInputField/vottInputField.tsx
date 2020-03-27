@@ -26,7 +26,7 @@ export class VottInputField extends React.Component<IVottInputFieldProps> {
     return (
       <input
         className="form-control"
-        value={this.props.value}
+        value={this.props.value || ''}
         onChange={this.onChange}>
       </input>
     );
